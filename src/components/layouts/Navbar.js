@@ -5,14 +5,14 @@ const Navbar = () => {
     <nav style={{ marginBottom: "30px" }} className="purple darken-4">
       <div className="nav-wrapper">
         <a href="#!" className="brand-logo center">
-          NewsHeadlines Finder
+          NewsFinder
         </a>
         <form>
           <div className="input-field">
             <input
               id="search"
               type="search"
-              placeholder="Search by country name"
+              placeholder="Search news..."
               required
             />
             <label className="label-icon" for="search">

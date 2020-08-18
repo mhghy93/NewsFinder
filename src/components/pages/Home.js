@@ -1,7 +1,12 @@
 import React from "react";
+import News from "../news/News";
 
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <div>
+      <News />
+    </div>
+  );
 };
 
 export default Home;
