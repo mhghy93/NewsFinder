@@ -2,7 +2,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <nav className="purple darken-4">
+    <nav style={{ marginBottom: "30px" }} className="purple darken-4">
       <div className="nav-wrapper">
         <a href="#!" className="brand-logo center">
           NewsHeadlines Finder
