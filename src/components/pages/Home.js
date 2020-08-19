@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import News from "../news/News";
+import NewsHeadlines from "../news/NewsHeadlines";
+import NewsContext from "../../context/news/NewsContext";
 
 const Home = () => {
-  return (
-    <div>
-      <News />
-    </div>
-  );
+  const newsContext = useContext(NewsContext);
+
+  const { searching } = newsContext;
+
+  return <div>{searching ? <News /> : <NewsHeadlines />}</div>;
 };
 
 export default Home;
