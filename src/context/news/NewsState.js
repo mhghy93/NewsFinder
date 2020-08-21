@@ -9,13 +9,7 @@ import {
   SET_LOADING,
 } from "../types";
 
-let newsApiKey;
-
-if (process.env.NODE_ENV !== "production") {
-  newsApiKey = process.env.REACT_APP_NEWS_API_KEY;
-} else {
-  newsApiKey = process.env.NEWS_API_KEY;
-}
+let newsApiKey = process.env.REACT_APP_NEWS_API_KEY;
 
 const NewsState = (props) => {
   const initialState = {
