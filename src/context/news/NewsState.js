@@ -9,14 +9,6 @@ import {
   SET_LOADING,
 } from "../types";
 
-let newsApiKey;
-
-if (process.env.NODE_ENV !== "production") {
-  newsApiKey = process.env.REACT_APP_NEWS_API_KEY;
-} else {
-  newsApiKey = process.env.NEWS_API_KEY;
-}
-
 const NewsState = (props) => {
   const initialState = {
     news: [],
@@ -32,7 +24,7 @@ const NewsState = (props) => {
     setLoading();
 
     const res = await axios.get(
-      `https://newsapi.org/v2/everything?q=${text}&apiKey=${newsApiKey}`
+      `https://newsapi.org/v2/everything?q=${text}&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
     );
 
     dispatch({ type: SEARCH_NEWS, payload: res.data.articles });
@@ -43,7 +35,7 @@ const NewsState = (props) => {
     setLoading();
 
     const res = await axios.get(
-      `https://newsapi.org/v2/top-headlines?country=in&apiKey=${newsApiKey}`
+      `https://newsapi.org/v2/top-headlines?country=in&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
     );
 
     dispatch({ type: GET_NEWS_HEADLINES, payload: res.data.articles });
