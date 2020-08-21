@@ -5,11 +5,8 @@ import NewsReducer from "./NewsReducer";
 import {
   SEARCH_NEWS,
   GET_NEWS_HEADLINES,
-  CLEAR_NEWS,
   SET_SEARCHING,
   SET_LOADING,
-  SET_ALERT,
-  REMOVE_ALERT,
 } from "../types";
 
 const NewsState = (props) => {
@@ -44,9 +41,6 @@ const NewsState = (props) => {
     dispatch({ type: GET_NEWS_HEADLINES, payload: res.data.articles });
   };
 
-  // Clear News
-  const clearNews = () => dispatch({ type: CLEAR_NEWS });
-
   // Set Loading
   const setSearching = () => dispatch({ type: SET_SEARCHING });
 
@@ -60,7 +54,6 @@ const NewsState = (props) => {
         loading: state.loading,
         searchNews,
         getNewsHeadlines,
-        clearNews,
         setSearching,
         setLoading,
       }}

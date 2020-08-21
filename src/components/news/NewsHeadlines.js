@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import NewsItem from "./NewsItem";
+import Spinner from "../layouts/Spinner";
 import NewsContext from "../../context/news/NewsContext";
 
 const NewsHeadlines = () => {
@@ -10,7 +11,11 @@ const NewsHeadlines = () => {
 
   const newsContext = useContext(NewsContext);
 
-  const { news } = newsContext;
+  const { news, loading } = newsContext;
+
+  if (loading) {
+    return <Spinner />;
+  }
 
   return (
     <div className="row">

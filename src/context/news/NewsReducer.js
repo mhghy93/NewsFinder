@@ -1,11 +1,8 @@
 import {
   SEARCH_NEWS,
   GET_NEWS_HEADLINES,
-  CLEAR_NEWS,
   SET_SEARCHING,
   SET_LOADING,
-  SET_ALERT,
-  REMOVE_ALERT,
 } from "../types";
 
 export default (state, action) => {
@@ -20,12 +17,6 @@ export default (state, action) => {
       return {
         ...state,
         news: action.payload,
-        loading: false,
-      };
-    case CLEAR_NEWS:
-      return {
-        ...state,
-        news: [],
         loading: false,
       };
     case SET_SEARCHING:

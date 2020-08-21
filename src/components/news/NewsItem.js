@@ -10,9 +10,18 @@ const NewsItem = ({ article }) => {
         <div className="card-content">
           <span className="card-title">{article.title}</span>
           <p>{article.content}</p>
+          <br />
+          <p className="left">{article.author}</p>
+          <p className="right">
+            {new Intl.DateTimeFormat("en-US").format(
+              new Date(article.publishedAt)
+            )}
+          </p>
         </div>
         <div className="card-action">
-          <a href={article.url}>Source</a>
+          <a href={article.url} target="_blank" rel="noopener noreferrer">
+            Source
+          </a>
         </div>
       </div>
     </div>
